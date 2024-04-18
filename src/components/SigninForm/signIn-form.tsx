@@ -26,10 +26,10 @@ const handleSubmit = (data: signInFormType) => {
   console.log(data)
 }
   return(
-   <Form {...form}>
-    <form id={id}  onSubmit={form.handleSubmit(handleSubmit)} className="grid gap-4">
+   <Form  {...form}>
+    <form id={id}  onSubmit={form.handleSubmit(handleSubmit)} className="grid  gap-4 bg-slate-900 rounded-md p-4">
       <Label htmlFor={id} >E-mail</Label>
-      <Input id={id} type="email" {...form.register("email")} placeholder="Digite o e-mail"/>
+      <Input id={id} type="email" className="min-w-[350px]" placeholder="Digite o e-mail"  {...form.register("email")}/>
       <Label htmlFor={id}>Senha</Label>
       <Input id={id} type="password" {...form.register("password")} placeholder="Digite sua senha" />
       <Button type="submit" form={id} disabled={!form.formState.isDirty || !form.formState.isValid}>Logar</Button>
